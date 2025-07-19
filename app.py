@@ -88,4 +88,5 @@ def send_email(subject, body, to, attachment_path):
         smtp.send_message(msg)
 
 if __name__ == '__main__':
-    app.run(debug=True,threaded=True,host='0.0.0.0')
+    port=int(os.environ.get("PORT",5000))
+    app.run(debug=True,threaded=True,host='0.0.0.0',port=port)
