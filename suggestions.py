@@ -1,7 +1,10 @@
-def get_suggestion(label):
-    suggestions = {
-        'fan': ("Fan not working or making noise", "Please check the wiring or motor issue"),
-        'ac': ("Air conditioner issue", "Clean the filters or check gas level"),
-        'wall_leakage': ("Wall leakage detected", "Seal cracks and check for broken pipes")
-    }
-    return suggestions.get(label, ("Unknown issue", "Please inspect manually"))
+# suggestions.py
+def get_suggestion(issue_type):
+    if issue_type == 'fan':
+        return "Fan not working", "Check power supply or replace capacitor"
+    elif issue_type == 'ac':
+        return "AC issue", "Check compressor or coolant level"
+    elif issue_type == 'wall_leakage':
+        return "Wall leakage", "Inspect plumbing and seal cracks"
+    else:
+        return "Unknown", "No suggestion available"
